@@ -1,0 +1,125 @@
+//imports necesarios
+@import "../base/variables";
+@import "../base/mixin";
+@import "../base/extend";
+/* estilos generales*/
+body{
+    background-color: $color1;
+    font-family: 'Montserrat', sans-serif;
+    a:link{
+        color: black;
+        text-decoration: none;
+    }
+    
+    a:visited{
+        color: black;
+        text-decoration: none;
+    }
+
+    .espaciado-parrafos{
+        display: block;
+    }
+}
+
+/* Estilos para el header*/
+
+header{
+    background-image: linear-gradient(to bottom right, $color2, $color2t0);
+    padding-top: 1rem;
+    .redes{
+        display: none;
+    }
+    nav{
+        div{
+            h1{
+                @include boton ($color1t07, 0);
+                border: solid;
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: large;
+            }
+            h1:hover{
+                @include hovbot;
+            }
+            div{
+                ul{
+                    .navegador-links{
+                        @include boton ($color1t05, 0.5rem);
+                        text-align: center;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        font-size: large;
+                        margin-left: 1.2rem;
+                        margin-right: 1.2rem;
+                        margin-top: 0.5rem;
+                        margin-bottom: 0.5rem;
+                    }
+                    .navegador-links:hover{
+                        @include hovbot;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*Estilos para el main*/
+
+h2{
+    font-weight: bold;
+    margin: 1rem;
+}
+
+/* Estilos para el footer*/
+
+footer{
+    @extend %flexi;
+    text-align: center;
+    margin: 2rem;
+    .redes-movil{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+        .redes-botones-movil{
+            @include boton ($color2t03, 0.5rem);
+            width: 70%;
+        }
+        .redes-botones-movil:hover{
+            @include hovbot;
+        }
+    }
+}
+
+/*Estilos para tablet*/
+@media screen and (min-width:600px){
+    /*Estilos para header en tablet*/
+    header{
+        .redes{
+            display: block;
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 1rem;
+            .redes-botones{
+                @include boton ($color2t05, 0.5rem);
+                width: 70%;
+            }
+            .redes-botones:hover{
+                @include hovbot;
+            }
+        }
+        nav{
+            div{
+                h1{
+                    font-size: xx-large;
+                }
+            }
+        }
+    }
+    /*Estilos para footer*/
+    footer{
+        .redes-movil{
+            display: none;
+        }
+    }
+}

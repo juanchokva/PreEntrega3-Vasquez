@@ -1,0 +1,17 @@
+@import "variables";
+
+//mixin para los botones
+
+@mixin boton ($bgcolor, $bradius){
+    background-color: $bgcolor;
+    border-radius: $bradius;
+    padding: 0.5rem;
+    transition: 0.4s;
+}
+
+//mixin para el hover de los botones
+
+@mixin hovbot{
+    background-color: $color1;
+    box-shadow: 1px 1px 5px black;
+}

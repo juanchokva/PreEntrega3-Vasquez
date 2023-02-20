@@ -1,0 +1,112 @@
+//imports necesarios
+@import "../base/variables";
+@import "../base/mixin";
+@import "../base/extend";
+
+/*Estilos para el main en listen*/
+.main-listen{
+    div{
+        .titulo-listen{
+            text-align: center;
+        }
+    }
+    .foto-listen{
+        display: none;
+    }
+    section{
+        @extend %flexi;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        font-size: 13px;
+        padding: 3rem;
+        .soundcloud{
+            width: 100%;
+            height: 240px;
+        }
+        .youtube{
+            width: 100%;
+            height: 300px;
+        }
+    }
+    .seccion-uno, .seccion-tres, .seccion-cinco{
+        background-color: $color3;
+        color: $color1;
+    }
+}
+
+/*Estilos para móviles más grandes*/
+@media screen and (min-width:300px){
+    .main-listen{
+        section{
+            font-size: medium;
+        }
+    }
+}
+
+/*Estilos para tablets*/
+@media screen and (min-width:600px){
+    .main-listen{
+        section{
+            .soundcloud{
+                width: 75%;
+            }
+            .youtube{
+                width: 85%;
+            }
+        }
+    }
+}
+
+/*Estilos para tablets pequeñas en modo horizontal*/
+@media screen and (min-width:970px){
+    .main-listen{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.5fr 1fr 1fr 1fr;
+
+        grid-template-areas: 
+            "tlisten flisten"
+            "sec1 sec2"
+            "sec4 sec3"
+            "sec5 sec6";
+        .container-titulo-listen{
+            grid-area: tlisten;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .foto-listen{
+            display: inline;
+            grid-area: flisten;
+            width: 100%;
+            margin: 0;
+        }
+        section{
+            .soundcloud{
+                width: 70%;
+            }
+            .youtube{
+                width: 80%;
+            }
+        }
+        .seccion-uno{
+            grid-area: sec1;
+        }
+        .seccion-dos{
+            grid-area: sec2;
+        }
+        .seccion-tres{
+            grid-area: sec3;
+        }
+        .seccion-cuatro{
+            grid-area: sec4;
+        }
+        .seccion-cinco{
+            grid-area: sec5;
+        }
+        .seccion-seis{
+            grid-template-columns: sec6;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+//imports necesarios
+@import "../base/variables";
+@import "../base/mixin";
+@import "../base/extend";
+
+/*Estilos para el main en about*/
+
+.main-about{
+    @extend %flexi;
+    justify-content: center;
+    align-items: center;
+    div{
+        .info-parrafo1{
+            @extend %flexi;
+            align-items: center;
+            background-color: $color3;
+            color: $color1;
+            padding: 3rem;
+            font-size: 13px;
+        }
+        .info-parrafo2{
+            @extend %flexi;
+            align-items: center;
+            background-color: $color4;
+            padding: 3rem;
+            font-size: 13px;
+        }
+    }
+    .about-img{
+        width: 50%;
+        margin: 3rem;
+    }
+
+}
+
+/*Estilos para móvil más grande*/
+@media screen and (min-width:300px){
+    .main-about{
+        div{
+            .info-parrafo1{
+                font-size: medium;
+            }
+            .info-parrafo2{
+                font-size: medium;
+            }
+        }
+    }
+}
+
+
+/*Estilos para about en escritorio*/
+@media screen and (min-width:1024px){
+    .main-about{
+        .info-about{
+            display: flex;
+        }
+    }
+}

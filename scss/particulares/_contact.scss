@@ -1,0 +1,126 @@
+//imports necesarios
+@import "../base/variables";
+@import "../base/mixin";
+@import "../base/extend";
+
+/*Estilos de main para contact*/
+.main-contact{
+    @extend %flexi;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    img{
+        width: 60%;
+        margin: 2rem;
+    }
+    .contact-form{
+        background-color: $color3;
+        color: $color1;
+        width: 90%;
+        padding: 1rem;
+        fieldset{
+            @extend %flexi;
+            justify-content: center;
+            align-items: center;
+            gap: 0rem;
+            legend{
+                text-align: center;
+            }
+            div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                width: 100%;
+                input[type=text]{
+                    width: 100%;
+                    font-size: 12px;
+                }
+                input[type=email]{
+                    width: 100%;
+                    font-size: 12px;
+                }
+                textarea{
+                    width: 100%;
+                    margin-bottom: 1rem;
+                    font-size: 12px;
+                }
+                .boton-form{
+                    @include boton ($color2t05, 0.5rem);
+                    border: 0;
+                    color: $color1;
+                    box-shadow: none;
+                    text-align: center;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+                .boton-form:hover{
+                    @include hovbot;
+                    color: black;
+                }
+            }
+            .form-botones{
+                flex-direction: row;
+            }
+        }
+        
+    }
+}
+
+/*Estilos para móviles más grandes*/
+@media screen and (min-width:350px){
+    .main-contact{
+        .contact-form{
+            fieldset{
+                div{
+                    input[type=text]{
+                        font-size: 16px;
+                    }
+                    input[type=email]{
+                        font-size: 16px;
+                    }
+                    textarea{
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*Estilos de contact para tablets*/
+@media screen and (min-width:800px){
+    .main-contact{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 10fr;
+
+        /*grid template areas*/
+        grid-template-areas: 
+            "titulo titulo"
+            "img form";
+        margin-left: 3rem;
+        margin-right: 3rem;
+        .titulo-contact{
+            grid-area: titulo;
+            text-align: center;
+        }
+        .img-contact{
+            grid-area: img;
+            width: 80%;
+        }
+        .contact-form{
+            grid-area: form;
+        }
+    }
+}
+
+/*Estilos de contact para escritorio*/
+@media screen and (min-width:1024px){
+    .main-contact{
+        .img-contact{
+            width: 70%;
+        }
+    }
+}
