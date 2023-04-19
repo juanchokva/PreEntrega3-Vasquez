@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+}
+
+header{
+    background-color: rgb(186, 131, 237);
+    text-align: center;
+    padding: 3rem;
+}
+
+main{
+    background-color: rgb(200, 200, 248);
+    padding: 2rem;
+}
+
+.titulo-principal{
+    color: rgb(40, 21, 21);
+}
+
+.titulo-articulos{
+    text-align: center;
+    margin: 1rem;
+}
+
+.listado-discos{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+.contenedor-disco{
+    background-color: rgb(238, 203, 238);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+.boton-agregar{
+    background-color: rgb(186, 131, 237);
+    color: aliceblue;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+.boton-agregar:hover{
+    background-color: aliceblue;
+    color: black;
+}
+
+.carrito{
+    background-color: rgb(233, 221, 244);
+    height: 100vh;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contenedor-carrito{
+    background-color: rgb(189, 135, 240);
+    padding: 0.5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin: 0.5rem;
+    border-radius: 1rem;
+    gap: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.boton-eliminar{
+    background-color: rgb(238, 203, 238);
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.boton-eliminar:hover{
+    background-color: aliceblue;
+}
+
